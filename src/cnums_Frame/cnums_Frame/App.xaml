@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:cnums_Frame"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="resources\button\transparentbutton.xaml"/>
     </Application.Resources>
 </Application>
