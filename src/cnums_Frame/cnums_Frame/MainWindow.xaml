@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cnums_Frame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="cnums-Frame" 
+        Height="720" Width="1080"
+        MinHeight="450" MinWidth="800"
+        Background="Transparent"
+        WindowState="Maximized">
+    <Border CornerRadius="0, 0, 10, 10"
+            Background="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="21*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    BorderBrush="Black"
+                    BorderThickness="0, 1, 0, 0">
+                <StackPanel HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <Button Content="New"
+                            Style="{StaticResource TransparentButton}"/>
+                    <Button Content="Exit"
+                            Style="{StaticResource TransparentButton}"/>
+                </StackPanel>
+            </Border>
 
-    </Grid>
+            <Grid x:Name="Hellocontent"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Margin="4,4,4,4"/>
+
+        </Grid>
+    </Border>
 </Window>
