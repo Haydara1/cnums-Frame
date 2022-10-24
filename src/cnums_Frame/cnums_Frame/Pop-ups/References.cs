@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,23 +11,54 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
+
 
 namespace cnums_Frame.Pop_ups
 {
     /// <summary>
     /// Interaction logic for References.xaml
     /// </summary>
-    public partial class References : Window
+    public class References : PopupWindow
     {
         public References()
         {
             InitializeComponent();
+            AddButtons();
         }
 
-        protected override void OnDeactivated(EventArgs e)
+        private void AddButtons()
         {
-            base.OnDeactivated(e);
-            Close();
+            Style? style = this.FindResource("PopupButton") as Style;
+
+            Button cnums = new()
+            { 
+                Content = "cnums",
+                Style = style,
+                ToolTip = "",
+            };
+
+            Button OxyPlot = new()
+            { 
+                Content = "Oxyplot",
+                Style = style 
+            };
+
+            Button WPFMath = new()
+            {
+                Content = "WPFMath",
+                Style = style
+            };
+
+            container.Children.Add(cnums);
+            container.Children.Add(OxyPlot);
+            container.Children.Add(WPFMath);
+
+            cnums.Click += cnumsClick;
+            OxyPlot.Click += OxyplotClick;
+            WPFMath.Click += WPFMathClick;
+
+            SetHeight();
         }
 
         private void cnumsClick(object sender, RoutedEventArgs e)
