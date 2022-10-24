@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="resources\button\transparentbutton.xaml"/>
+                <ResourceDictionary Source="resources\button\popupbutton.xaml"/>
                 <ResourceDictionary Source="resources\radiobutton\mainrbutton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
